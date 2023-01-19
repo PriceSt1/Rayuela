@@ -15,6 +15,9 @@ class CreateHorasClasesTable extends Migration
     {
         Schema::create('horas_clases', function (Blueprint $table) {
             $table->id();
+            $table->string('horaInicio');
+            $table->string('horaFinal');
+            $table->primary(["id"]);
             $table->timestamps();
         });
     }

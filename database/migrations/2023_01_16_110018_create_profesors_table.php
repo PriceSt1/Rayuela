@@ -15,6 +15,11 @@ class CreateProfesorsTable extends Migration
     {
         Schema::create('profesors', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('apellidos');
+            $table->string('dni');
+            $table->integer('rol');
+            $table->primary(["id"]);
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreateAsignaturaProfesorsTable extends Migration
     {
         Schema::create('asignatura_profesors', function (Blueprint $table) {
             $table->id();
+            $table->integer('idProfesor');
+            $table->foreign("idProfesor")->references('id')->on('profesors')->onUpdate("cascade")->onDelete("cascade");
+            $table->integer('idAsignatura');
+            $table->foreign("idAsignatura")->references('id')->on('asignaturas')->onUpdate("cascade")->onDelete("cascade");
+            $table->primary(["idProfesor", "idAsignatura"]);
             $table->timestamps();
         });
     }

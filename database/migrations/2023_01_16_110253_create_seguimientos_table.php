@@ -15,6 +15,15 @@ class CreateSeguimientosTable extends Migration
     {
         Schema::create('seguimientos', function (Blueprint $table) {
             $table->id();
+            $table->integer('idProfesor');
+            $table->foreign("idProfesor")->references('id')->on('profesors')->onUpdate("cascade")->onDelete("cascade");
+            $table->integer('idAlumno');
+            $table->foreign("idAlumno")->references('id')->on('alumnos')->onUpdate("cascade")->onDelete("cascade");
+            $table->dateTime('fechaHora');
+            $table->integer('idAsignatura');
+            $table->foreign("idAsignatura")->references('id')->on('asignaturas')->onUpdate("cascade")->onDelete("cascade");
+            $table->string('comentario');
+            $table->primary(["idProfesor", "idAlumno", "fechaHora", "idAsignatura"]);
             $table->timestamps();
         });
     }

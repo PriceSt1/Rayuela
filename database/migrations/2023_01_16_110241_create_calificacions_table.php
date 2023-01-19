@@ -15,6 +15,12 @@ class CreateCalificacionsTable extends Migration
     {
         Schema::create('calificacions', function (Blueprint $table) {
             $table->id();
+            $table->integer('idAlumno');
+            $table->foreign("idAlumno")->references('id')->on('alumnos')->onUpdate("cascade")->onDelete("cascade");
+            $table->integer('idAsignatura');
+            $table->foreign("idAsignatura")->references('id')->on('asignaturas')->onUpdate("cascade")->onDelete("cascade");
+            $table->integer('nota');
+            $table->primary(["idAlumno", "idAsignatura"]);
             $table->timestamps();
         });
     }

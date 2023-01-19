@@ -15,6 +15,13 @@ class CreateAlumnosTable extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
+            $table->string('apellidos');
+            $table->string('dni');
+            $table->integer('rol');
+            $table->integer('curso');
+            $table->foreign('curso')->references('id')->on('cursos')->onUpdate("cascade")->onDelete("cascade");
+            $table->primary(["id"]);
             $table->timestamps();
         });
     }
