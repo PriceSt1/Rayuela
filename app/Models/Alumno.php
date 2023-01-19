@@ -19,7 +19,6 @@ class Alumno extends Model
         'apellidos',
         'dni',
         'curso',
-        'asignaturas_alumno',
         'rol'
     ];
 }

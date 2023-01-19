@@ -18,7 +18,6 @@ class Profesor extends Model
         'nombre',
         'apellidos',
         'dni',
-        'asignaturas_profesor',
         'rol'
     ];
 }
