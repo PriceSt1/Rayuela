@@ -14,7 +14,11 @@ class FaltaFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'fecha' => date ( 'd-m-Y' ),
+            'idHora' => $this->faker->randomElement(DB::table('horasClase')->pluck('id')),
+            'idAlumno' => $this->faker->randomElement(DB::table('alumno')->pluck('id')),
+            'idProfesor' => $this->faker->randomElement(DB::table('profesor')->pluck('id')),
+            'idAsignatura' => $this->faker->randomElement(DB::table('asignatura')->pluck('id')),
         ];
     }
 }

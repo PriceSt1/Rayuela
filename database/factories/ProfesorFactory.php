@@ -14,7 +14,10 @@ class ProfesorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombre' => $this->faker->firstName,
+            'apellidos' => $this->faker->lastName,
+            'dni' => $this->faker->randomNumber($nbDigits = 8, $strict = false) . $this->faker->randomLetter,
+            'idRol' => random_int(0,1),
         ];
     }
 }

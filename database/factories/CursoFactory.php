@@ -13,8 +13,10 @@ class CursoFactory extends Factory
      */
     public function definition()
     {
+        $curso = array("1eso", "2eso", "3eso", "4eso", "1batch", "2batch");
+
         return [
-            //
+            'nombre' => $this->faker->randomElement($curso),
         ];
     }
 }

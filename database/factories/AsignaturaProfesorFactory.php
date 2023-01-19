@@ -14,7 +14,8 @@ class AsignaturaProfesorFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'profesor' => $this->faker->randomElement(DB::table('profesor')->pluck('id')),
+            'idAsignatura' => $this->faker->randomElement(DB::table('asignatura')->pluck('id')),
         ];
     }
 }

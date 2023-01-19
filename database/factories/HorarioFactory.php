@@ -14,7 +14,10 @@ class HorarioFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idAsignatura' => $this->faker->randomElement(DB::table('asignatura')->pluck('id')),
+            'idAlumno' => $this->faker->randomElement(DB::table('alumno')->pluck('id')),
+            'dia' => $this->faker->dayOfWeek,
+            'hora' => random_int(1,6),
         ];
     }
 }

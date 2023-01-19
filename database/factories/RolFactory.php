@@ -13,8 +13,12 @@ class RolFactory extends Factory
      */
     public function definition()
     {
+        $roles = array("profesor", "alumno");
+        $num = random_int(0, 1);
+
         return [
-            //
+            'idRol' => $num,
+            'tipoRol' => $roles[$num],
         ];
     }
 }

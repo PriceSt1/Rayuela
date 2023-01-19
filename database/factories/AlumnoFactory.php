@@ -18,7 +18,6 @@ class AlumnoFactory extends Factory
             'apellidos' => $this->faker->lastName,
             'dni' => $this->faker->randomNumber($nbDigits = 8, $strict = false) . $this->faker->randomLetter,
             'curso' => $this->faker->randomElement(DB::table('curso')->pluck('id')),
-            'asignaturaAlumno' => $this->faker->randomElement(DB::table('asignaturaAlumno')->pluck('id')),
             'idRol' => random_int(0,1),
         ];
     }

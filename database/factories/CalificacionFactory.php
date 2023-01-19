@@ -14,7 +14,8 @@ class CalificacionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'idAsignatura' => $this->faker->randomElement(DB::table('asignatura')->pluck('id')),
+            'nota' => random_int(0,10),
         ];
     }
 }

@@ -13,8 +13,14 @@ class HorasClaseFactory extends Factory
      */
     public function definition()
     {
+        $horaInicio = array(8, 9, 10, 11, 12, 13);
+        $horaFinal = array(9, 10, 11, 12, 13, 14);
+
+        $num = random_int(0, 6);
+
         return [
-            //
+            'horaInicio' => $horaInicio[$num],
+            'horaFinal' => $horaFinal[$num],
         ];
     }
 }
