@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Seguimiento extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'idProfesor',
+        'idAlumno',
+        'dia',
+        'hora',
+        'asignatura',
+        'comentario'
+    ];
 }
