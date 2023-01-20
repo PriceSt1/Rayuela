@@ -14,7 +14,6 @@ class CreateFaltasTable extends Migration
     public function up()
     {
         Schema::create('faltas', function (Blueprint $table) {
-            $table->id();
             $table->dateTime('fecha');
             $table->unsignedBigInteger('idHora');
             $table->foreign('idHora')->references('id')->on('horas_clases')->onUpdate("cascade")->onDelete("cascade");

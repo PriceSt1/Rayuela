@@ -14,7 +14,6 @@ class CreateAsignaturaProfesorsTable extends Migration
     public function up()
     {
         Schema::create('asignatura_profesors', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('idProfesor');
             $table->foreign("idProfesor")->references('id')->on('profesors')->onUpdate("cascade")->onDelete("cascade");
             $table->unsignedBigInteger('idAsignatura');

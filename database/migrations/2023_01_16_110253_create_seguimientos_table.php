@@ -14,7 +14,6 @@ class CreateSeguimientosTable extends Migration
     public function up()
     {
         Schema::create('seguimientos', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('idProfesor');
             $table->foreign("idProfesor")->references('id')->on('profesors')->onUpdate("cascade")->onDelete("cascade");
             $table->unsignedBigInteger('idAlumno');

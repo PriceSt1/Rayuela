@@ -14,7 +14,6 @@ class CreateCalificacionsTable extends Migration
     public function up()
     {
         Schema::create('calificacions', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('idAlumno');
             $table->foreign("idAlumno")->references('id')->on('alumnos')->onUpdate("cascade")->onDelete("cascade");
             $table->unsignedBigInteger('idAsignatura');
