@@ -16,13 +16,13 @@ class CreateFaltasTable extends Migration
         Schema::create('faltas', function (Blueprint $table) {
             $table->id();
             $table->dateTime('fecha');
-            $table->integer('idHora');
+            $table->unsignedBigInteger('idHora');
             $table->foreign('idHora')->references('id')->on('horas_clases')->onUpdate("cascade")->onDelete("cascade");
-            $table->integer('idAlumno');
+            $table->unsignedBigInteger('idAlumno');
             $table->foreign('idAlumno')->references('id')->on('alumnos')->onUpdate("cascade")->onDelete("cascade");
-            $table->integer('idProfesor');
+            $table->unsignedBigInteger('idProfesor');
             $table->foreign('idProfesor')->references('id')->on('profesors')->onUpdate("cascade")->onDelete("cascade");
-            $table->integer('idAsignatura');
+            $table->unsignedBigInteger('idAsignatura');
             $table->foreign('idAsignatura')->references('id')->on('asignaturas')->onUpdate("cascade")->onDelete("cascade");
             $table->primary(["fecha", "idHora", "idAlumno"]);
             $table->timestamps();

@@ -19,7 +19,7 @@ class CreateAlumnosTable extends Migration
             $table->string('apellidos');
             $table->string('dni');
             $table->integer('rol');
-            $table->integer('curso');
+            $table->unsignedBigInteger('curso');
             $table->foreign('curso')->on('cursos')->references('id')->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
         });
