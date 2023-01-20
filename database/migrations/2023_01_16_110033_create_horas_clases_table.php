@@ -17,7 +17,6 @@ class CreateHorasClasesTable extends Migration
             $table->id();
             $table->string('horaInicio');
             $table->string('horaFinal');
-            $table->primary(["id"]);
             $table->timestamps();
         });
     }

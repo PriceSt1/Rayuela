@@ -20,8 +20,7 @@ class CreateAlumnosTable extends Migration
             $table->string('dni');
             $table->integer('rol');
             $table->integer('curso');
-            $table->foreign('curso')->references('id')->on('cursos')->onUpdate("cascade")->onDelete("cascade");
-            $table->primary(["id"]);
+            $table->foreign('curso')->on('cursos')->references('id')->onDelete("cascade")->onUpdate("cascade");
             $table->timestamps();
         });
     }

@@ -20,7 +20,6 @@ class CreateAsignaturasTable extends Migration
             $table->foreign('profesor')->references('id')->on('profesors')->onUpdate("cascade")->onDelete("cascade");
             $table->integer('idCurso');
             $table->foreign('idCurso')->references('id')->on('cursos')->onUpdate("cascade")->onDelete("cascade");
-            $table->primary(["id"]);
             $table->timestamps();
         });
     }

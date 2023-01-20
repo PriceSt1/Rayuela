@@ -19,7 +19,6 @@ class CreateProfesorsTable extends Migration
             $table->string('apellidos');
             $table->string('dni');
             $table->integer('rol');
-            $table->primary(["id"]);
             $table->timestamps();
         });
     }

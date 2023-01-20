@@ -21,7 +21,6 @@ class CreateHorariosTable extends Migration
             $table->foreign('idAlumno')->references('id')->on('alumnos')->onUpdate("cascade")->onDelete("cascade");
             $table->string('dia');
             $table->integer('hora');
-            $table->primary(["id"]);
             $table->timestamps();
         });
     }
