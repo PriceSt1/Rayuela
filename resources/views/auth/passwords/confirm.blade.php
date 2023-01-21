@@ -46,4 +46,13 @@
         </div>
     </div>
 </div>
+<script>
+    document.getElementById("appName").style.display = "block";
+    document.getElementById("fotoPerfil").style.display = "none";
+    document.getElementById("datosAlumnosCenter").style.display = "none";
+    document.getElementById("loginButtons").style.display = "block";
+    document.getElementById("staticBackdrop").style.display = "none";
+    document.getElementById("btnSalir").style.display = "none";
+    document.getElementById("datosAlumno").style.display = "none";
+</script>
 @endsection
